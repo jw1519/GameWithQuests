@@ -2280,7 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quests: []
-  QuestMenu: {fileID: 0}
+  QuestMenu: {fileID: 42105010}
 --- !u!1 &1953401505
 GameObject:
   m_ObjectHideFlags: 0
