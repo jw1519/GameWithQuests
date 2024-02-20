@@ -26,7 +26,7 @@ public class QuestManager : MonoBehaviour
 
     private void DisplayQuests()
     {
-        string displayText = "Quests: \n";
+        string displayText = "Quests: \n" ;
 
 
         QuestMenu.text = displayText;
@@ -46,7 +46,6 @@ public class QuestManager : MonoBehaviour
     {
         quests.Add(new Quest(name, description));
         EnableQuestMarker(name);
-
     }
 
     public void EnableQuestMarker(string name)
