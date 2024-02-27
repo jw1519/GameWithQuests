@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class QuestManager : MonoBehaviour
 {
@@ -11,28 +12,18 @@ public class QuestManager : MonoBehaviour
     [SerializeField] public List<Quest> quests = new List<Quest>();
     public Dictionary<string, QuestMarker> questMarkers = new Dictionary<string, QuestMarker>();
 
+    private List<string> Quests;
     private void Awake()
     {
         instance = this;
+        Quests = new List<string>();
     }
+
 
     //quest table
     public TMP_Text QuestMenu;
 
-    private void Start()
-    {
-        DisplayQuests();
-    }
-
-    private void DisplayQuests()
-    {
-        string displayText = "Quests: \n" ;
-
-
-        QuestMenu.text = displayText;
-    }
-    //
-
+    
     public void RegisterQuestMarker(QuestMarker marker)
     {
         if (!questMarkers.ContainsKey(marker.questName))
@@ -46,6 +37,11 @@ public class QuestManager : MonoBehaviour
     {
         quests.Add(new Quest(name, description));
         EnableQuestMarker(name);
+
+        //Add Quest name to pannel
+        Quests.Add(name);
+        string itemtext = name.ToString();
+        QuestMenu.text += itemtext + "\n";
     }
 
     public void EnableQuestMarker(string name)

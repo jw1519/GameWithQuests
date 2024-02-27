@@ -382,8 +382,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -813,6 +813,7 @@ MonoBehaviour:
   questName: can you find her bag
   questDescription: can you find my bag i dropped it around here
   questCompletionMessage: 'thank you '
+  questMenu: {fileID: 42105010}
 --- !u!135 &526880782
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1653,6 +1654,7 @@ MonoBehaviour:
   questName: find her purse
   questDescription: can you find my purse i dropped it around here
   questCompletionMessage: thank you so much
+  questMenu: {fileID: 42105010}
 --- !u!135 &1057117384
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1968,6 +1970,7 @@ MonoBehaviour:
   questName: Save the cat
   questDescription: can you find my cat? I was last seen going into an alley
   questCompletionMessage: thank you for saving my cat!
+  questMenu: {fileID: 42105010}
 --- !u!135 &1426137995
 SphereCollider:
   m_ObjectHideFlags: 0
