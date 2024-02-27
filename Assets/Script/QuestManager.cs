@@ -12,18 +12,16 @@ public class QuestManager : MonoBehaviour
     [SerializeField] public List<Quest> quests = new List<Quest>();
     public Dictionary<string, QuestMarker> questMarkers = new Dictionary<string, QuestMarker>();
 
-    private List<string> Quests;
+    private List<string> Quests = new List<string>();
     private void Awake()
     {
         instance = this;
-        Quests = new List<string>();
     }
 
 
     //quest table
-    public TMP_Text QuestMenu;
+    public TMP_Text questMenu;
 
-    
     public void RegisterQuestMarker(QuestMarker marker)
     {
         if (!questMarkers.ContainsKey(marker.questName))
@@ -37,11 +35,10 @@ public class QuestManager : MonoBehaviour
     {
         quests.Add(new Quest(name, description));
         EnableQuestMarker(name);
-
-        //Add Quest name to pannel
         Quests.Add(name);
+
         string itemtext = name.ToString();
-        QuestMenu.text += itemtext + "\n";
+        questMenu.text += itemtext + "\n";
     }
 
     public void EnableQuestMarker(string name)
@@ -59,6 +56,13 @@ public class QuestManager : MonoBehaviour
         if(quest != null)
         {
             quest.isCompleted = true;
+            Quests.Remove(name);
+            questMenu.text = "Quests: \n";
+            foreach (string questName in Quests)
+            {
+                string itemtext = questName.ToString();
+                questMenu.text = "Quests \n" + itemtext + "\n";
+            }
         }
     }
 }
