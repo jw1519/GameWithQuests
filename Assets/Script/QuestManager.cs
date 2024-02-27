@@ -58,7 +58,7 @@ public class QuestManager : MonoBehaviour
             quest.isCompleted = true;
             Quests.Remove(name);
             questMenu.text = "Quests: \n";
-            foreach (string questName in Quests)
+            foreach (string questName in Quests) // doesnt work with more than two quests
             {
                 string itemtext = questName.ToString();
                 questMenu.text = "Quests \n" + itemtext + "\n";
