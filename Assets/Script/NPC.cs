@@ -22,10 +22,15 @@ public class NPC : MonoBehaviour
             else if (quest.isCompleted)
             {
                 Debug.Log(questMarker.questCompletionMessage);
+                QuestManager.instance.questMenu.text = " Quests: \n";
+                foreach (string questName in QuestManager.instance.Quests) // doesnt work with more than two questsa
+                {
+                    string itemtext = questName.ToString();
+                    QuestManager.instance.questMenu.text += itemtext + "\n";
+                }
             }
-            
 
-           
+        
         }
     }
 }

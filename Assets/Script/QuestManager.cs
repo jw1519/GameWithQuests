@@ -9,10 +9,10 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
 
-    [SerializeField] public List<Quest> quests = new List<Quest>();
+    [SerializeField] public List<Quest> quests;
     public Dictionary<string, QuestMarker> questMarkers = new Dictionary<string, QuestMarker>();
 
-    private List<string> Quests = new List<string>();
+    [SerializeField] public List<string> Quests = new List<string>();
     private void Awake()
     {
         instance = this;
@@ -57,12 +57,7 @@ public class QuestManager : MonoBehaviour
         {
             quest.isCompleted = true;
             Quests.Remove(name);
-            questMenu.text = "Quests: \n";
-            foreach (string questName in Quests) // doesnt work with more than two quests
-            {
-                string itemtext = questName.ToString();
-                questMenu.text = "Quests \n" + itemtext + "\n";
-            }
+            
         }
     }
 }
