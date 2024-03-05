@@ -19,14 +19,15 @@ public class NPC : MonoBehaviour
                 questMarker.gameObject.SetActive(true);
                 Debug.Log(questMarker.questDescription);
             }
-            else if (quest.isCompleted)
+            else if (quest.isCompleted == true)
             {
+                QuestManager.instance.Quests.Remove(name);
                 Debug.Log(questMarker.questCompletionMessage);
                 QuestManager.instance.questMenu.text = " Quests: \n";
-                foreach (string questName in QuestManager.instance.Quests) // doesnt work with more than two questsa
+                foreach (string name in QuestManager.instance.Quests) // doesnt work with more than two questsa
                 {
-                    string itemtext = questName.ToString();
-                    QuestManager.instance.questMenu.text += itemtext + "\n";
+                    string itemtext = name.ToString();
+                    QuestManager.instance.questMenu.text = "Quest: \n" + itemtext;
                 }
             }
 

@@ -9,7 +9,7 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance;
 
-    [SerializeField] public List<Quest> quests;
+    [SerializeField] public List<Quest> quests = new List<Quest>();
     public Dictionary<string, QuestMarker> questMarkers = new Dictionary<string, QuestMarker>();
 
     [SerializeField] public List<string> Quests = new List<string>();
@@ -56,7 +56,6 @@ public class QuestManager : MonoBehaviour
         if(quest != null)
         {
             quest.isCompleted = true;
-            Quests.Remove(name);
             
         }
     }
